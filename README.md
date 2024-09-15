@@ -24,7 +24,26 @@ docker compose down
 ```bash
 golangci-lint run -c .golangci.yml
 ```
-P.S. Миграции таблиц накатываются автоматически. В задание не было указано должны ли быть тестотвые данные в базе, поэтому бд оставил пустой.
+P.S. Миграции таблиц накатываются автоматически. Т.к. конкретных методов для добавления пользователей в задание не было, добавил тестовые данные:  
+```bash      
+INSERT INTO employee (username, first_name, last_name)
+VALUES
+    ('user1', 'Denis', 'Maksimov'),
+    ('user2', 'Margot', 'Robbie'),
+    ('user3', 'Jennifer', 'Lawrence');
+
+INSERT INTO organization (name, description, type)
+VALUES
+    ('TechCorp', 'A technology company', 'LLC'),
+    ('FinServices', 'Financial services provider', 'JSC'),
+    ('HealthInc', 'Healthcare and wellness', 'IE');
+
+INSERT INTO organization_responsible (organization_id, user_id)
+VALUES
+    (1, 1),
+    (1, 2), 
+    (2, 3);
+```
 
 # Реализация  
 - Подход с чистой архитектурой  
@@ -54,7 +73,7 @@ linters-settings:
       - ok
       - tx
       - id
-      - tc # testCase for tests
+      - tc 
     ignore-decls:
       - t testing.T
       - T any

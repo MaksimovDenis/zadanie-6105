@@ -107,3 +107,21 @@ CREATE TABLE bid_feedbacks (
     feedback TEXT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+INSERT INTO employee (username, first_name, last_name)
+VALUES
+    ('user1', 'Denis', 'Maksimov'),
+    ('user2', 'Margot', 'Robbie'),
+    ('user3', 'Jennifer', 'Lawrence');
+
+INSERT INTO organization (name, description, type)
+VALUES
+    ('TechCorp', 'A technology company', 'LLC'),
+    ('FinServices', 'Financial services provider', 'JSC'),
+    ('HealthInc', 'Healthcare and wellness', 'IE');
+
+INSERT INTO organization_responsible (organization_id, user_id)
+VALUES
+    (1, 1),
+    (1, 2), 
+    (2, 3);
