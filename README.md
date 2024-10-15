@@ -1,11 +1,3 @@
-## Пожалуйста, обратите внимание:
-Были внесены незначительные измененя в спецификацию:
- - Тип параметра id был изменён с uuid на integer. (в примерах испольуется integer, однако в спецификации тип string).  
- - Endpoint **/bids/{tenderId}/reviews** был заменён на **/bids-tender/{tenderId}/reviews** (по причине конфлита маршрутов).  
- - Endpoint **/bids/{tednerId}/list** был заменён на **/bids-tender/{tednerId}/list** (по причине конфликта маршрутов).  
- - Спецификация доступна по адресу: (https://git.codenrock.com/avito-testirovanie-na-backend-1270/cnrprod1725722009-team-78107/zadanie-6105/-/blob/master/pkg/protocol/oapi/openapi.yml?ref_type=heads)  
-
-
 # Запуск  
 
 1. Сколнировать репозиторий:
